@@ -1,0 +1,66 @@
+
+
+
+	
+ Requirements:
+		
+The system must...
+
+1. Display to the client the available timeslots for delivery for a specific address.
+
+2. Identify the customer.
+
+3. Display the delivery status daily / weekly for the system admins.
+
+4. Allowing the client to book/cancel delivery.
+
+5. Allowing the client/ admin/ courier mark delivery as completed.
+
+6. convert oneliner address to a standard schema. 
+
+7. When calculating timeslots, make sure timeslot does not fall on a holiday (https://holidayapi.com/docs ).
+
+8. Display courier API - JSON file with the available timeslots for the upcoming week, loaded on start.
+
+9.  Support business capacity up to 10 deliveries per day.
+
+10. Different sources in parallel calculate support Timeslots.
+
+11. Each timeslot can handle a maximum of 2 deliveries.
+
+12. Handle concurrent requests (two consumers trying to reserve the same timeslot.
+
+Use case 1:
+
+	Title: Book a delivery
+	actor: client
+	Success scenario: The client provides his address and gets the available time slots for delivery for the upcoming week. The client picks the desired timeslot and books a delivery. 
+
+
+Use case 2: 
+	
+	Title: Getting delivery status.
+	Actor: System admin
+	Success story: The admin asks for the daily/weekly deliveries status and retrieves the status report
+	with the booked/ canceled/ completed deliveries. 
+
+Use case 3:
+
+	Title: Canceling a delivery
+	Actor: client
+	Success story: A client cancel a booked delivery. 
+
+Use case 4:
+
+	Title: Mark delivery as completed
+	Actor: Client
+	Success story: After delivery has been completed, The client marks the delivery as completed.
+
+
+
+
+
+
+
+
+
