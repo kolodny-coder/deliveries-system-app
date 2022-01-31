@@ -1,23 +1,23 @@
-const { Sequelize, DataTypes } = require("sequelize");
+const {Sequelize, DataTypes} = require("sequelize");
 require("dotenv").config();
 const sequelize = new Sequelize(process.env.SQLDB_URI, {
-  dialect: "postgres",
-  protocol: "postgres",
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false,
+    dialect: "postgres",
+    protocol: "postgres",
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false,
+        },
     },
-  },
 });
 
 const User = sequelize.define("User", {
-  name: DataTypes.TEXT,
-  address: DataTypes.TEXT,
-  uuid: {
-    type: DataTypes.UUID,
-    defaultValue: DataTypes.UUIDV4, // Or DataTypes.UUIDV1
-  },
+    name: DataTypes.TEXT,
+    address: DataTypes.TEXT,
+    uuid: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4, // Or DataTypes.UUIDV1
+    },
 });
 
 // console.log(User === sequelize.models.User);
